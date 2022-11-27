@@ -5,7 +5,12 @@
 
 fetch("http://localhost:3000/api/products")
     .then((oui) => oui.json())
-    .then((data) => {
+    .then((data) => add(data))
+
+
+function add(donne){
+
+        
         console.log(data)
         const imageUrl = data[0].imageUrl
         //console.log("url display, j'afiche l'imahe du tableau 8 images existe", imageUrl)
@@ -37,4 +42,4 @@ fetch("http://localhost:3000/api/products")
 
   mapremierimage.appendChild(first)
 
-})
+}
