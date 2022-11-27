@@ -12,6 +12,7 @@ function add(donne){
 
         
         console.log(data)
+        
         const imageUrl = data[0].imageUrl
         //console.log("url display, j'afiche l'imahe du tableau 8 images existe", imageUrl)
    
