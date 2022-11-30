@@ -53,8 +53,6 @@
 //J'ai chercher alors et la foncton append child peut marcher
 
 
-
-
 /*Utilisation de la fonction Fletch pour faire un appel API
 afin d'obtenir les données des produits sur le localhost:3000*/
 
