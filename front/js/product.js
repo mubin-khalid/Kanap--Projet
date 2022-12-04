@@ -7,7 +7,7 @@
 const queryString = new URLSearchParams(window.location.search);
 const id = queryString.get("id");
 console.log(id);
-
+//var idProduct = url.searchParams.get("id");
 
 
 
@@ -18,24 +18,28 @@ fetch(`http://localhost:3000/api/products/${id}`)
   .then((ans) => {
     // console.log("les Kanap",res)
     return infoprod(ans);
-  });
+  })
+  .catch((error) => {
+    console.log("Erreur");
+});
 
 
-  //refaire la me
+  //refaire la mm
 
 
   function infoprod(product){
     //creation d'un produit
     //ne marche sans le point dans un query selector
-
     const item__img = document.querySelector(".item__img");
     const picture = document.createElement("img");
     item__img.appendChild(picture);
-       
     //scr est un string  et un selecteur selonla librairie 
     picture.src = product.imageUrl;
     picture.alt = product.altTxt;
-    
-
-
+    const title = document.querySelector("#title");
+    title.textContent = product.name;
+    const prix = document.querySelector("#price");
+    prix.textContent = product.price;
+    const description = document.querySelector("#description");
+    description.textContent = product.description;
   }
