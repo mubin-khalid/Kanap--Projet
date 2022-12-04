@@ -9,7 +9,10 @@ const id = queryString.get("id");
 //console.log(id);
 //var idProduct = url.searchParams.get("id");
 
-
+function makeDescription(description) {
+  const p = document.querySelector("#description")
+  if (p != null) p.textContent = description
+}
 
 fetch(`http://localhost:3000/api/products/${id}`)
   .then((response) => {
@@ -40,6 +43,19 @@ fetch(`http://localhost:3000/api/products/${id}`)
     title.textContent = product.name;
     const prix = document.querySelector("#price");
     prix.textContent = product.price;
-    const description = document.querySelector("#description");
-    description.textContent = product.description;
+  const description = document.querySelector("#description");
+  description.textContent = product.description;
+
+
+
+   // item.querySelector("#colors").insertAdjacentHTML("beforeend", product.colors.map(color => `<option value="${color}">${color}</option>`).join());
+  // makeDescription(product)
+  // makeDescription(description)
+  
+  
   }
+
+  // function makeDescription(description) {
+  //   const p = document.querySelector("#description")
+  //   if (p != null) p.textContent = description
+  // }
