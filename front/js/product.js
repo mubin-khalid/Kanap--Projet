@@ -6,7 +6,7 @@
 
 const queryString = new URLSearchParams(window.location.search);
 const id = queryString.get("id");
-//console.log(id);
+console.log(id);
 
 
 
@@ -17,7 +17,7 @@ fetch(`http://localhost:3000/api/products/${id}`)
   })
   .then((ans) => {
     // console.log("les Kanap",res)
-    return pageProduit(ans);
+    return infoprod(ans);
   });
 
 
@@ -28,12 +28,12 @@ fetch(`http://localhost:3000/api/products/${id}`)
     //creation d'un produit
     //ne marche sans le point dans un query selector
 
-    const item__img = document.queryselector(".item__img")
+    const item__img = document.querySelector(".item__img");
     const picture = document.createElement("img");
     item__img.appendChild(picture);
-
+       
     //scr est un string  et un selecteur selonla librairie 
-    picture.scr = product.imageUrl;
+    picture.src = product.imageUrl;
     picture.alt = product.altTxt;
     
 
