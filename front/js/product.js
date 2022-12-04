@@ -6,7 +6,7 @@
 
 const queryString = new URLSearchParams(window.location.search);
 const id = queryString.get("id");
-console.log(id);
+//console.log(id);
 //var idProduct = url.searchParams.get("id");
 
 
