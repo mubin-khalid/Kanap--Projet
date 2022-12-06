@@ -51,6 +51,20 @@ fetch(`http://localhost:3000/api/products/${id}`)
    // item.querySelector("#colors").insertAdjacentHTML("beforeend", product.colors.map(color => `<option value="${color}">${color}</option>`).join());
   // makeDescription(product)
   // makeDescription(description)
+
+
+  let couleur = product.colors;
+
+  /*séléction direct de l'id colors et création de la balise option 
+    pour le lié au donné pour afficher plusieurs choix de couleur*/
+  const choixCouleur = document.querySelector("#colors");
+  if (choixCouleur != null) {
+    couleur.forEach((couleur) => {
+      const option = document.createElement("option");
+      option.value = couleur;
+      option.textContent = couleur;
+      choixCouleur.appendChild(option);
+    });
   
   
   }
@@ -58,4 +72,6 @@ fetch(`http://localhost:3000/api/products/${id}`)
   // function makeDescription(description) {
   //   const p = document.querySelector("#description")
   //   if (p != null) p.textContent = description
-  // }
+  // 
+
+}
