@@ -74,4 +74,39 @@ fetch(`http://localhost:3000/api/products/${id}`)
   //   if (p != null) p.textContent = description
   // 
 
+
+  /*
+  faire un eventlistener sur le bouton
+  au click on recupére couleur et qte
+  on verifie couleur existante != "" & que qte entre 1 et 100 inclus
+  si tout est bon :
+  on verifie si le localstorage n'existe pas, on créer une nouvelle liste ([]) et on y rajoute notre article
+  si il existe deja, on cherche dedans si id+color sont identique:
+  si on le trouve on incremente (avec test si sa dépasse aps 100)
+  sinon on rajoute a la liste
+  on met a jour le localstorage
+  */
+
+ // addEventListener
+
+ const bouton = document.querySelector("#addToCart");
+ if (bouton != null) {
+   bouton.addEventListener("click", () => {
+     const colors = document.querySelector("#colors").value;
+     const quantite = document.querySelector("#quantity").value;
+
+     if (colors == null || colors === "" || quantite == null || quantite == 0 || quantite >= 101) {
+       alert("SVP choissez une couleur et une quantité max 100, merci.");
+       return bouton;
+     }
+
+     let addId = `${id}` + ":" + colors;
+     localStorage.setItem(addId, JSON.stringify(product));
+
+     //redirection vers le pannier
+     window.location.href = "cart.html";
+   });
+ }
+
+
 }
