@@ -100,7 +100,7 @@ fetch(`http://localhost:3000/api/products/${id}`)
        return bouton;
      }
 
-     let addId = `${id}` + ":" + colors;
+     let addId = `${id}` +  ":" + quantite + ":" + colors ;
      localStorage.setItem(addId, JSON.stringify(product));
 
      //redirection vers le pannier
