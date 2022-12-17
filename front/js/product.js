@@ -95,8 +95,8 @@ fetch(`http://localhost:3000/api/products/${id}`)
      const colors = document.querySelector("#colors").value;
      const quantite = document.querySelector("#quantity").value;
 
-     if (colors == null || colors === "" || quantite == null || quantite == 0 || quantite >= 101) {
-       alert("SVP choissez une couleur et une quantité max 100, merci.");
+     if (colors == null || quantite <= 0 || quantite > 100 || colors == "") {
+       alert("Veuillez choisir une couleur et une quantité maximum de 100 unités pour votre commande, Merci.");
        return bouton;
      }
 
