@@ -105,6 +105,7 @@ fetch(`http://localhost:3000/api/products/${id}`)
 
      //redirection vers le pannier
      window.location.href = "cart.html";
+     
    });
  }
 
