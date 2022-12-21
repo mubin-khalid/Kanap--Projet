@@ -90,6 +90,9 @@ fetch(`http://localhost:3000/api/products/${id}`)
  // addEventListener
 
  const bouton = document.querySelector("#addToCart");
+
+ const quantite = document.querySelector("#quantity").value;
+
  if (bouton != null) {
    bouton.addEventListener("click", () => {
      const colors = document.querySelector("#colors").value;
@@ -102,12 +105,16 @@ fetch(`http://localhost:3000/api/products/${id}`)
 
      let addId = `${id}` +  ":" + quantite + ":" + colors ;
      localStorage.setItem(addId, JSON.stringify(product));
+        //redirection vers le pannier
+        window.location.href = "cart.html";
 
-     //redirection vers le pannier
-     window.location.href = "cart.html";
+
      
    });
  }
+ //  alert("Votre quantité ajouté est de + " + quantite)
+
+
 
 
 }
