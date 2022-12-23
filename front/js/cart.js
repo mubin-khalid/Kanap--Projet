@@ -1,4 +1,4 @@
-const cart = []
+const cart = [];
 
 retrieveItemsFromCache()
 cart.forEach((item) => displayItem(item))

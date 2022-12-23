@@ -76,6 +76,13 @@ fetch(`http://localhost:3000/api/products/${id}`)
 
 
   /*
+  article = {id / color / qte}
+  localstorage.key = "cart"
+  localstorage.value = [
+    {id:, color:, qte:},
+    {id:, color:, qte:},
+  ]
+
   faire un eventlistener sur le bouton
   au click on recupére couleur et qte
   on verifie couleur existante != "" & que qte entre 1 et 100 inclus
@@ -104,7 +111,7 @@ fetch(`http://localhost:3000/api/products/${id}`)
      }
 
      let addId = `${id}` +  ":" + quantite + ":" + colors ;
-     localStorage.setItem(addId, JSON.stringify(product));
+     localStorage.setItem("cart", JSON.stringify(product));
         //redirection vers le pannier
         window.location.href = "cart.html";
 
