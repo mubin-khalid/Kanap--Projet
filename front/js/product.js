@@ -79,8 +79,6 @@ if (bouton != null) {
       window.location.href = "cart.html";
   });
 }
-
-
 }
 
 
